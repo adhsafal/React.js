@@ -16,7 +16,7 @@ function App() {
   useEffect( () => {
     db.collection('todos').orderBy('timestamp','desc').onSnapshot( snapshot => {
       // console.log(snapshot.docs.map(doc => doc.data()))
-      setTodos(snapshot.docs.map(doc => doc.data().todo))
+      setTodos(snapshot.docs.map(doc => ({id: doc.id, todo: doc.data().todo})))
     })
   }, []) //the dependencies defines when the useEffect runs
 
@@ -41,7 +41,7 @@ function App() {
         <InputLabel>☑️ Write a Todo</InputLabel>
         <Input value={input}
           placeholder="Add new"
-          onChange={event => setInput(event.target.value)} />
+          onChange={event => setInput(event.target.value)}/>
       </FormControl>
       <Button
         disabled={!input}
@@ -53,7 +53,7 @@ function App() {
 
       <ul>
         {todos.map(todo => (
-          <Todo text={todo}/>
+          <Todo todo={todo}/>
         ))}
       </ul>
     </div>
