@@ -17,3 +17,9 @@
 .message__guestCard {
   background-color: cornsilk !important;
 }
+
+.user__name {
+  margin: 0;
+  color: rgb(78, 78, 78);
+  text-align: left !important;
+}
