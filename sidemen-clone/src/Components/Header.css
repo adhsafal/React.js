@@ -1,0 +1,32 @@
+.header {
+  box-sizing: border-box;
+  display: flex;
+  height: 180px;
+  width: 100%;
+  background-color: black;
+  align-items: center;
+  position: fixed;
+  justify-content: center;
+  border-bottom: 1px solid white;
+}
+
+.header__nav {
+  color: white;
+  position: absolute;
+  padding: 20px;
+  left: 0;
+  cursor: pointer;
+}
+
+.header__logo {
+  width: 230px;
+  height: 66.31px;
+}
+
+.header__shopping {
+  color: white;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
